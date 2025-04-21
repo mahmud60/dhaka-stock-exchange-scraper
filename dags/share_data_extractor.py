@@ -16,7 +16,7 @@ default_args = {
 
 # Define the main DAG
 dag = DAG(
-    'scrape_and_save_share_prices_with_company_data',
+    'share_data_extractor',
     default_args=default_args,
     description='Insert company data first, then scrape DSE share prices daily',
     schedule_interval=timedelta(days=1),  # Runs daily
