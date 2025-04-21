@@ -81,6 +81,22 @@ services:
       - pgadmin_data:/var/lib/pgadmin
     depends_on:
       - postgres
+  
+  django:
+    build: ./django
+    container_name: django
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./django:/app
+    environment:
+      - DB_NAME=airflow
+      - DB_USER=airflow
+      - DB_PASSWORD=airflow
+      - DB_HOST=postgres
+      - DB_PORT=5432
 
 volumes:
   postgres-db-volume:

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Company List</title>
+</head>
+<body>
+  <h1>Company List</h1>
+  <ul>
+    {% for company in companies %}
+      <li>{{ company.company_trade_name }} - <a href="{{ company.company_url }}" target="_blank">Details</a></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
